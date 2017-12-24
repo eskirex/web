@@ -2,12 +2,11 @@
 
 namespace Eskirex\Component\Web;
 
+use Eskirex\Component\Web\Exceptions\RoutingException;
 use Eskirex\Component\Config\Config;
 use Eskirex\Component\Dotify\Dotify;
 use Eskirex\Component\HTTP\Response;
-use Eskirex\Component\Web\Exceptions\RoutingException;
 use Eskirex\Component\HTTP\Request;
-use Eskirex\Component\Web\Web;
 
 class Routing
 {
@@ -60,7 +59,7 @@ class Routing
                     }
                 }
 
-                return $controller->{'index'}();
+                return $controller->{Web::config('default_method')}();
             }
 
             if (strpos($handler, '@')) {

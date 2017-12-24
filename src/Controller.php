@@ -5,7 +5,7 @@ namespace Eskirex\Component\Web;
 use Eskirex\Component\HTTP\Request;
 use Eskirex\Component\HTTP\Response;
 
-abstract class Controller
+class Controller
 {
     /**
      * @var Request
@@ -51,7 +51,7 @@ abstract class Controller
 
         return static::$view;
     }
-    
+
 
     public function __construct()
     {
